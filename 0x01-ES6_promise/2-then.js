@@ -1,9 +1,11 @@
 #!/usr/bin/node
 
-export default function handleResponseFromAPI (promise) {
-  promise.then(function () {
-    console.log('handleResponseFromAPI');
-  }
-    .then({ status: 200, body: 'Success' })
-    .catch(Error));
+export default function function handleResponseFromAPI(promise) {
+	promise.then (
+		(result) => {
+			console.log({result});
+			console.log('Got a response from the API');
+		}, (error) => {
+			console.log('Got a response from the API');
+		})
 }
