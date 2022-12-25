@@ -1,3 +1,6 @@
-import handleProfileSignup from './3-all';
+import handleResponseFromAPI from "./2-then.js";
 
-handleProfileSignup();
+const promise = Promise.reject();
+
+handleResponseFromAPI(promise)
+	.then((res) => console.log(res));
