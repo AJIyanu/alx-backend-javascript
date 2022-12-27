@@ -5,7 +5,9 @@ export default class Building {
     } else {
       throw TypeError('sqft must be a Number');
     }
-    this.evacuationWarningMessage();
+    if (this.constructor !== Building) {
+      this.evacuationWarningMessage();
+    }
   }
 
   set sqft(sqft) {
