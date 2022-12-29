@@ -10,7 +10,7 @@ class SkyHighBuilding extends Building {
     }
   }
 
-  get floors(floors) {
+  get floors() {
     return this._floors;
   }
 
