@@ -1,20 +1,6 @@
-import Building from './5-building.js';
+import SkyHighBuilding from './6-sky_high.js';
 
-const b = new Building(100);
-console.log(b);
-
-try {
-    class TestBuilding extends Building {}
-}
-catch(err) {
-   console.log(err);
-}
-
-try {
-    new TestBuilding(200)
-}
-catch(err) {
-    console.log(err);
-}
-//console.log(b.evacuationWarningMessage());
-//console.log(typeof(new TestBuilding(200).evacuationWarningMessage()));
+const building = new SkyHighBuilding(140, 60);
+console.log(building.sqft);
+console.log(building.floors);
+console.log(building.evacuationWarningMessage());

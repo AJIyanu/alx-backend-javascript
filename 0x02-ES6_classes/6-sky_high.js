@@ -1,12 +1,12 @@
-import Building from "5-building.js"
+import Building from './5-building.js';
 
-class SkyHighBuilding extends Building {
+export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
     super(sqft);
-    if (typeof(floors) === "number") {
-      this._floors = floors
+    if (typeof (floors) === 'number') {
+      this._floors = floors;
     } else {
-    throw TypeError('floors must be a Number');
+      throw TypeError('floors must be a Number');
     }
   }
 
