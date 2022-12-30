@@ -1,12 +1,7 @@
-import listOfStudents, { StudentHolberton, HolbertonClass } from "./9-hoisting.js";
+import EVCar from './100-evcar.js';
 
-console.log(listOfStudents);
+const ec1 = new EVCar("Tesla", "Turbo", "Red", "250");
+console.log(ec1);
 
-const listPrinted = listOfStudents.map(
-  student => student.fullStudentDescription
-);
-
-console.log(listPrinted);
-
-console.log(listOfStudents.length);
-console.log(listOfStudents[0] instanceof StudentHolberton);
+const ec2 = ec1.cloneCar();
+console.log(ec2);
