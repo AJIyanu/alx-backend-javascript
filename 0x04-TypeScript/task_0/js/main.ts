@@ -10,4 +10,6 @@ const studentsList: Student[] = [
 	{ firstName: "Nora", lastName: "Gwom", age: 21, location: "Foron" }
 ];
 
-
+for (let element of studentsList) {
+  console.table([element], ['firstName', 'location'])
+}
