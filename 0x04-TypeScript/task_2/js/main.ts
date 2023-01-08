@@ -55,7 +55,7 @@ function createEmployee (salary: number | string) {
 }
 
 function isDirector (employee: Director | Teacher): employee is Director {
-	return true;
+	return employee;
 }
 
 function executeWork (employee: Director | Teacher) {
