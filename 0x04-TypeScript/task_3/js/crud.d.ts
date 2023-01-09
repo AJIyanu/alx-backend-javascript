@@ -1,13 +1,18 @@
 import { RowID, RowElement } from "./interface";
 
-interface insertRowinterface {
-  (row:RowElement):number;
-}
+//declare module "insertRow" {
+//  (row:RowElement) : number;
+//}
 
-interface deleterowinterface {
-  (rowId:RowID): void;
-}
+//declare module "deleteRow" {
+//  (rowId:RowID) : void;
+//}
 
-interface updaterowinterface {
-  (rowid:RowID, row:RowElement): RowID
-}
+//declare module "updateRow" {
+//  (rowid:RowID, row:RowElement): RowID;
+//}
+//
+
+declare module "insertRow";
+declare module "deleteRow";
+declare module "updateRow";

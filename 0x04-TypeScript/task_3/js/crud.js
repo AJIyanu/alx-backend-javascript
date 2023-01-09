@@ -5,7 +5,6 @@ export function insertRow (row) {
 
 export function deleteRow (rowId) {
   console.log('Delete row id', rowId);
-  return;
 }
 
 export function updateRow (rowId, row) {
