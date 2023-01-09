@@ -1,6 +1,6 @@
 /// <reference types="./crud" />
 import { RowElement, RowID } from "./interface";
-import * as CRUD from "./crud.js";
+import * as CRUD from "./crud";
 
 const row: RowElement = {
   firstName : "Guillaume",
@@ -14,4 +14,3 @@ updatedRow.age = 23;
 
 CRUD.updateRow(newRowID, updatedRow);
 CRUD.deleteRow(newRowID);
-

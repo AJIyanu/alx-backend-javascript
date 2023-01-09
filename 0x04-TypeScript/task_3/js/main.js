@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var CRUD = require("./crud.js");
+var CRUD = require("./crud");
 var row = {
     firstName: "Guillaume",
     lastName: "Salva"
