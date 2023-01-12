@@ -1,16 +1,16 @@
 /// <reference path="Teacher.ts" />
 namespace Subjects {
 	export class Teacher {
-		experienceTeachingC?:number;
+		experienceTeachingJava?:number;
 	}
 
 	export class Cpp extends Subject {
 		getRequirements ():string {
-			return "Here is the list of requirements for Cpp";
+			return "Here is the list of requirements for Java";
 		}
 
 		getAvailableTeacher ():string {
-			if (super.teacher.experienceTeachingC !== 0) {
+			if (super.teacher.experienceTeachingJava !== 0) {
 				return "No available teacher";
 			}
 			return `Available Teacher: ${first name of teacher}`
