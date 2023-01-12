@@ -15,15 +15,15 @@ export const cTeacher:Subjects.Teacher = {
 
 console.log('C++');
 cpp.setTeacher = cTeacher;
-cpp.getAvailableTeacher();
-cpp.getRequirements();
+console.log(cpp.getAvailableTeacher());
+console.log(cpp.getRequirements());
 
 console.log('Java');
 java.setTeacher = cTeacher;
-java.getAvailableTeacher();
-java.getRequirements();
+console.log(java.getAvailableTeacher());
+console.log(java.getRequirements());
 
 console.log('React');
 react.setTeacher = cTeacher;
-react.getAvailableTeacher();
-react.getRequirements();
+console.log(react.getAvailableTeacher());
+console.log(react.getRequirements());
