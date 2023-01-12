@@ -1,1 +1,1 @@
-/// <reference path="Teacher.ts" />
+/// <reference path="./subjects/Teacher.ts" />

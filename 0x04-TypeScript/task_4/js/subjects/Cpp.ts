@@ -1,6 +1,6 @@
 /// <reference path="Teacher.ts" />
 namespace Subjects {
-	export class Teacher {
+	export interface Teacher {
 		experienceTeachingC?:number;
 	}
 
@@ -13,5 +13,7 @@ namespace Subjects {
 			if (super.teacher.experienceTeachingC !== 0) {
 				return "No available teacher";
 			}
-			return `Available Teacher: ${first name of teacher}`
+			return `Available Teacher: ${super.teacher.firstName}`
+		}
+	}
 }
