@@ -1,4 +1,6 @@
-/// <reference path="Teacher.ts" />
+/// <reference path="./Teacher.ts" />
+/// <reference path="./Subject.ts" />
+
 namespace Subjects {
 	export interface Teacher {
 		experienceTeachingReact?:number;
@@ -10,10 +12,10 @@ namespace Subjects {
 		}
 
 		getAvailableTeacher ():string {
-			if (super.teacher.experienceTeachingReact !== 0) {
+			if (this.teacher.experienceTeachingReact !== 0) {
 				return "No available teacher";
 			}
-			return `Available Teacher: ${super.teacher.firstName}`
+			return `Available Teacher: ${this.teacher.firstName}`
 		}
 	}
 }
