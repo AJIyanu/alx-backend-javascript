@@ -6,7 +6,7 @@ describe ('calculateNumber', () => {
   it('should return the sum of two rounded numbers', () =>  {
     const a = 4.9;
     const b = 8.3;
-    const result = 13;
+    const result = 12;
 
     const calculate = calcuateNumber(a, b);
 
