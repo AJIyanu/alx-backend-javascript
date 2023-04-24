@@ -9,6 +9,8 @@ describe ('calculateNumber', () => {
     const result = 12;
 
     const calculate = calculateNumber(a, b);
+    console.log(calculate);
+    console.log(calculateNumber(5.6, 8.5));
 
     assert.strictEqual(calculate, result);
   }
