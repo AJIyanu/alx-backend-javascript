@@ -17,6 +17,8 @@ describe ('calculateNumber', () => {
 
   it('checks for default value', () => {
     assert.equal(isNaN(calculateNumber(3)), true);
+    console.log(isNaN(calculateNumber(6)));
+    console.log(calculateNumber(6));
     assert.equal(isNaN(calculateNumber(6, '2')), true);
   });
 });
