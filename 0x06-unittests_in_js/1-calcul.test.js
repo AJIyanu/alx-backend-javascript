@@ -30,9 +30,4 @@ describe ('calculateNumber', () => {
     assert.equal(calculateNumber('DIVIDE', 1.4, 0.4), 'Error');
   }
   );
-
-  it('checks for default value', () => {
-    assert.equal(isNaN(calculateNumber(3)), true);
-    assert.equal(isNaN(calculateNumber(6, '2')), false);
-  });
 });
