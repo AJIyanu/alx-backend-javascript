@@ -1,6 +1,4 @@
-const assert = require('assert');
-
-const calculateNumber = require('./2-calcul');
+const calculateNumber = require('./2-calcul_chai');
 
 expect(calculateNumber('SUM', 1.2, 3.5)).to.equal(5);
 expect(calculateNumber('SUM', 1.2, 3.5)).to.equal(5);
