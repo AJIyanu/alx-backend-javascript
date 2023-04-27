@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/AJIyanu/alx-backend-javascript/issues"
   },
-  "homepage": "https://github.com/AJIyanu/alx-backend-javascript#readme"
+  "homepage": "https://github.com/AJIyanu/alx-backend-javascript#readme",
+  "dependencies": {
+    "chai": "^4.3.7"
+  }
 }
