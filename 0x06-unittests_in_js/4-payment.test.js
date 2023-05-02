@@ -14,7 +14,7 @@ describe('sendPaymentRequestToApi', () => {
 
     expect(spy.calledOnce).to.be.true;
     expect(spy.calledWith('SUM', 100, 20)).to.be.true;
-    expect(console.assert(consoleStub.calledWith('The total is: 10'))).to.be.true;
+    expect(consoleStub.calledWith('The total is: 10')).to.be.true;
 
     spy.restore();
     Stub.restore();
