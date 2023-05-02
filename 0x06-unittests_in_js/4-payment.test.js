@@ -13,7 +13,6 @@ describe('sendPaymentRequestToApi', () => {
     expect(Stub.calledOnce).to.be.true;
     expect(consoleStub.calledWith('The total is: 10')).to.be.true;
 
-    spy.restore();
     Stub.restore();
     console.log.restore();
   });
