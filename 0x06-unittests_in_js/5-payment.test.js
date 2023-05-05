@@ -5,25 +5,25 @@ const sinon = require('sinon');
 const expect = require('chai').expect;
 
 describe('sendPaymentRequestToApi', () => {
+  let consoleSpy;
+
   beforeEach(() => {
-    const spy = sinon.spy(Utils, 'calculateNumber');
-    const consoleStub = sinon.stub(console, 'log');
+    consoleSpy = sinon.spy(console, 'log');
   });
 
   afterEach(() => {
-    spy.restore();
-    console.log.restore();
+    consoleSpy.restore();
   });
 
   it('verify that sendrequestoapi returns 120', () => {
     sendPaymentRequestToApi(100, 20);
-    expect(consoleStub.calledWith('The total is: 120')).to.be.true;
-    expect(consoleStub.calledOnce).to.be.true;
+    expect(consoleSpy.calledWith('The total is: 120')).to.be.true;
+    expect(consoleSpy.calledOnce).to.be.true;
   });
 
   it('verify that sendrequestoapi returns 20', () => {
     sendPaymentRequestToApi(10, 10);
-    expect(consoleStub.calledWith('The total is: 20')).to.be.true;
-    expect(consoleStub.calledOnce).to.be.true;
+    expect(consoleSpy.calledWith('The total is: 20')).to.be.true;
+    expect(consoleSpy.calledOnce).to.be.true;
   });
 });
