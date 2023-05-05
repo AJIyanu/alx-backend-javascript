@@ -1,7 +1,7 @@
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./4-payment');
 const sinon = require('sinon');
-const { beforeEach, afterEach, it } = require('mocha');
+// const { beforeEach, afterEach, it } = require('mocha');
 const expect = require('chai').expect;
 
 describe('sendPaymentRequestToApi', () => {
