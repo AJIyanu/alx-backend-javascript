@@ -1,5 +1,6 @@
-export default function returnHowManyArguments (...simi) {
+export default function returnHowManyArguments(...simi) {
   let count = 0;
-  for (let rest of simi) count += 1;
+  let rest
+  for (rest of simi) count += 1;
   return count;
 }
