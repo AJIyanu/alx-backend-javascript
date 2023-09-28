@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
 export default function getResponseFromAPI() {
-  return Promise.resolve();
+  return new Promise.resolve();
 }
