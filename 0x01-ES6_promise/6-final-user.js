@@ -1,7 +1,7 @@
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
-export default function handleProfileSignup(firstName, lastName, fileName) {
+export default async function handleProfileSignup(firstName, lastName, fileName) {
   const settled = [];
   const promises = [
     signUpUser(firstName, lastName).then((result) => ({
@@ -13,9 +13,8 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       value: error,
     })),
   ];
-  Promise.all(promises).then((res) => {
+  await Promise.all(promises).then((res) => {
     res.forEach((res) => settled.push(res));
-    console.log(settled);
-    return settled;
   });
+  return settled;
 }
