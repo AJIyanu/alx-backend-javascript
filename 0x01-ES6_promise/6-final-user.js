@@ -7,7 +7,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     signUpUser(firstName, lastName).then((result) => ({
       status: 'resolved',
       value: result,
-    })).catch((error) => ({ status: 'rejected', value: error })),
+    })).catch((error) => ({ status: 'rejected', value: error.message })),
     uploadPhoto(fileName).catch((error) => ({
       status: 'rejected',
       value: error,
