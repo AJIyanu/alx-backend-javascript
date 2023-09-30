@@ -5,9 +5,9 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const settled = [];
   const promises = [
     signUpUser(firstName, lastName).then((result) => ({
-      status: 'resolved',
+      status: 'fulfilled',
       value: result,
-    })).catch((error) => ({ status: 'rejected', value: error.message })),
+    })).catch((error) => ({ status: 'rejected', value: `Error: ${error.messgae}` })),
     uploadPhoto(fileName).catch((error) => ({
       status: 'rejected',
       value: error,
