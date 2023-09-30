@@ -9,8 +9,8 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
       value: result,
     })).catch((error) => {
       const err = error.toString();
-       return { status: 'rejected', value: `Error: ${err}` }
-      }),
+      return { status: 'rejected', value: `Error: ${err}` };
+    }),
     uploadPhoto(fileName).catch((error) => ({
       status: 'rejected',
       value: error.toString(),
