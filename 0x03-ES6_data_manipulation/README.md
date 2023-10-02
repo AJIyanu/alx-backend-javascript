@@ -1,48 +1,26 @@
-0. Basic list of objects
-mandatory
-Create a function named getListStudents that returns an array of objects.
+# Project: 0x03. ES6 data manipulation
 
-Each object should have three attributes: id (Number), firstName (String), and location (String).
+## Resources
 
-The array contains the following students in order:
+#### Read or watch:
 
-Guillaume, id: 1, in San Francisco
-James, id: 2, in Columbia
-Serena, id: 5, in San Francisco
+* [Array](https://intranet.alxswe.com/rltoken/bcXqK1IaIHtrZ45sv0RxsQ)
+* [Typed Array](https://intranet.alxswe.com/rltoken/YZ5RtzAPTaWtF00MYbXuVw)
+* [Set Data Structure](https://intranet.alxswe.com/rltoken/Ch8vq39y9QnlTMr8CymgEg)
+* [Map Data Structure](https://intranet.alxswe.com/rltoken/W29MV3f8Ii4HmeJSALNIpw)
+* [WeakMap](https://intranet.alxswe.com/rltoken/pSetFVFeIR660GPE0flPdg)
+## Tasks
 
-
-1. More mapping
-mandatory
-Create a function getListStudentIds that returns an array of ids from a list of object.
-
-This function is taking one argument which is an array of objects - and this array is the same format as getListStudents from the previous task.
-
-If the argument is not an array, the function is returning an empty array.
-
-You must use the map function on the array.
-
-
-2. Filter
-mandatory
-Create a function getStudentsByLocation that returns an array of objects who are located in a specific city.
-
-It should accept a list of students (from getListStudents) and a city (string) as parameters.
-
-You must use the filter function on the array.
-
-
-3. Reduce
-mandatory
-Create a function getStudentIdsSum that returns the sum of all the student ids.
-
-It should accept a list of students (from getListStudents) as a parameter.
-
-You must use the reduce function on the array.
-
-4. Combine
-mandatory
-Create a function updateStudentGradeByCity that returns an array of students for a specific city with their new grade
-
-It should accept a list of students (from getListStudents), a city (String), and newGrades (Array of “grade” objects) as parameters.
-
-newGrades is an array of objects with this format:
+| Task | File |
+| ---- | ---- |
+| 0. Basic list of objects | [0-get_list_students.js](./0-get_list_students.js) |
+| 1. More mapping | [1-get_list_student_ids.js](./1-get_list_student_ids.js) |
+| 2. Filter | [2-get_students_by_loc.js](./2-get_students_by_loc.js) |
+| 3. Reduce | [3-get_ids_sum.js](./3-get_ids_sum.js) |
+| 4. Combine | [4-update_grade_by_city.js](./4-update_grade_by_city.js) |
+| 5. Typed Arrays | [5-typed_arrays.js](./5-typed_arrays.js) |
+| 6. Set data structure | [6-set.js](./6-set.js) |
+| 7. More set data structure | [7-has_array_values.js](./7-has_array_values.js) |
+| 8. Clean set | [8-clean_set.js](./8-clean_set.js) |
+| 9. Map data structure | [9-groceries_list.js](./9-groceries_list.js) |
+| 10. More map data structure | [10-update_uniq_items.js](./10-update_uniq_items.js) |
