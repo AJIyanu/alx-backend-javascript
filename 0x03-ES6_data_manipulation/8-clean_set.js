@@ -1,8 +1,8 @@
 export default function cleanSet(set, startString) {
-  if (! (startString instanceof String)) return '';
+  if ( typeof startString !== "string" || startString === '') {return '';}
   const exist = [];
   set.forEach((stng) => {
-    if (stng instanceof String) {
+    if (typeof stng === 'string') {
     if (stng.startsWith(startString)) {
       exist.push(stng.slice(startString.length));
     }}
