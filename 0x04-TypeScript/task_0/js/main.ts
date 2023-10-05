@@ -22,7 +22,20 @@ const student2: Student = {
 
 const studentsList: Student[] = [student1, student2];
 
-const tableBody = document.getElementById("tableBody");
+const table = document.createElement('table');
+const thead = document.createElement('thead');
+const headRow = document.createElement('tr');
+const firstNameHead = document.createElement('th');
+firstNameHead.textContent = 'FirstName';
+headRow.appendChild(firstNameHead);
+const locationHead = document.createElement('th');
+locationHead.textContent = "Location";
+headRow.appendChild(locationHead);
+
+thead.appendChild(headRow);
+table.appendChild(thead);
+document.body.appendChild(table)
+const tableBody = document.createElement('tbody');
 
 studentsList.forEach(student => {
 	const row = document.createElement("tr");
