@@ -45,3 +45,5 @@ studentsList.forEach(student => {
 	`;
 	tableBody.appendChild(row);
 });
+
+table.appendChild(tableBody);
