@@ -1,13 +1,15 @@
-const getPaymentTokenFromAPI = require('./6-payment_token');
+const getPaymentTokenFromAPI = require('./test');
 const assert = require('assert');
 
 describe ('getPaymentTokenFromAPI', () => {
 	it('it should return Successful response from the API', function(done) {
 		getPaymentTokenFromAPI(true)
 			.then((result) => {
-			assert.equal(result.data, "Successful response from the API");
+			console.log(result, result.result);
+			assert.equal(result.result, "Successful response from the API");
+			done();
 		});
-		done();
+		// done();
 	});
 
 });
