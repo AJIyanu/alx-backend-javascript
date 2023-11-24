@@ -10,8 +10,4 @@ describe ('getPaymentTokenFromAPI', () => {
 		done();
 	});
 
-	xit('should do nothing when input is false', (done) => {
-		assert.equal(getPaymentTokenFromAPI(false), undefined);
-		done();
-	});
 });
