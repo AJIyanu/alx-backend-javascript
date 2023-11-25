@@ -11,6 +11,6 @@ rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
 });
 
 process.on('exit', () => {
-  console.log('This important software is now closing.');
+  console.log('This important software is now closing');
   // process.exit();
 });
