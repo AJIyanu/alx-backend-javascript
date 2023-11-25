@@ -10,7 +10,7 @@ rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
   rl.close();
 })
 
-process.on('SIGNIT', () => {
-	console.log('This important software is now closing');
-	process.exit();
+process.on('exit', () => {
+	console.log('This important software is now closing.');
+	//process.exit();
 })
