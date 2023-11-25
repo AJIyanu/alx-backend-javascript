@@ -10,7 +10,7 @@ rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
   rl.close();
 });
 
-rl.on('end', () => {
+process.on('exit', () => {
   process.stdout.write('This important software is now closing\n');
   process.exit(0);
 });
