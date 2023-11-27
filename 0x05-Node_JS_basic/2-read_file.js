@@ -5,8 +5,9 @@ const { parse } = require('csv-parse');
 function countStudents(path) {
 	try{
 		var data = fs.readFileSync(path, 'utf8');
-	} catch 
-	{	throw new Error('Cannot load the database')}
+	} catch (err) {
+		throw new Error('Cannot load the database')
+	}
 
 	const parseOpt = {
 		delimiter: ",",
@@ -19,7 +20,7 @@ function countStudents(path) {
 			console.log(err);
 			return;
 		}
-		console.log('Number of students: ', rows.length);
+		console.log(`Number of students: ${rows.length}`);
 		const fielcount = countStudentField(rows);
 		for (const field in fielcount) {
 			process.stdout.write('Number of students in ' + field);
