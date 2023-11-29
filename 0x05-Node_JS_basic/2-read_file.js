@@ -1,33 +1,43 @@
 const fs = require('fs');
 const { parse } = require('csv-parse');
+const { count } = require('console');
 
 
 function countStudents(path) {
 	try{
 		var data = fs.readFileSync(path, 'utf8');
+		// console.log(data);
 	} catch (err) {
 		throw new Error('Cannot load the database')
 	}
 
-	const parseOpt = {
-		delimiter: ",",
-		from_line: 2,
-		skip_empty_lines: true
-	};
+	const dataTable = splitData(data);
+	dataTable.splice(0, 1);
+	console.log(`Number of students: ${dataTable.length}`);
 
-	parse(data, parseOpt, (err, rows) => {
-		if (err) {
-			console.log(err);
-			return;
+	const fieldCount = countStudentField(dataTable);
+	let fieldLog = "";
+	for (const field in fieldCount) {
+		fieldLog = `Number of students in ${field}: ${fieldCount[field]}.`
+		fieldLog = fieldLog + listStudent(field, dataTable);
+		console.log(fieldLog);
+	}
+}
+
+
+function splitData(allData) {
+	let dataArray = [];
+	let rows = [];
+
+	rows = allData.split(/["\n"]/);
+	for (const  row of rows) {
+		if ( row !== "" && row !== "\r" ) {
+			const fields = row.split(/[",", "\r"]/);
+			fields.pop()
+			dataArray.push(fields);
 		}
-		console.log(`Number of students: ${rows.length}`);
-		const fielcount = countStudentField(rows);
-		for (const field in fielcount) {
-			process.stdout.write('Number of students in ' + field);
-			process.stdout.write(': ' + fielcount[field]);
-			listStudent(field, rows);
-		}
-	})
+	}
+	return dataArray;
 }
 
 function countStudentField (rows) {
@@ -44,18 +54,18 @@ function countStudentField (rows) {
 }
 
 function listStudent (fieldName, rows) {
-	process.stdout.write('. List:');
+	let studList = ` List:`;
 	let check = false;
 	for (const name of rows) {
-		
 		if (fieldName == name[3]) {
 		if (check === true) {
-			process.stdout.write(',');
-		}	process.stdout.write(' ' + name[0]);
+			studList = studList + ',';
+		}
+		studList = studList + ` ${name[0]}`;
 		check = true;
 		}
 	}
-	process.stdout.write('\n')
+	return studList;
 }
 
 module.exports = countStudents;
