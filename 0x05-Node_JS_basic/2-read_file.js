@@ -1,28 +1,4 @@
 const fs = require('fs');
-// const { parse } = require('csv-parse');
-// const { count } = require('console');
-
-
-function countStudents(path) {
-	try{
-		var data = fs.readFileSync(path, 'utf8');
-		// console.log(data);
-	} catch (err) {
-		throw new Error('Cannot load the database')
-	}
-
-	const dataTable = splitData(data);
-	dataTable.splice(0, 1);
-	console.log(`Number of students: ${dataTable.length}`);
-
-	const fieldCount = countStudentField(dataTable);
-	let fieldLog = "";
-	for (const field in fieldCount) {
-		fieldLog = `Number of students in ${field}: ${fieldCount[field]}.`
-		fieldLog = fieldLog + listStudent(field, dataTable);
-		console.log(fieldLog);
-	}
-}
 
 
 function splitData(allData) {
@@ -66,6 +42,27 @@ function listStudent (fieldName, rows) {
 		}
 	}
 	return studList;
+}
+
+
+function countStudents(path) {
+	try{
+		const data = fs.readFileSync(path, 'utf8');
+		const dataTable = splitData(data);
+		dataTable.splice(0, 1);
+		console.log(`Number of students: ${dataTable.length}`);
+
+		const fieldCount = countStudentField(dataTable);
+		let fieldLog = "";
+		for (const field in fieldCount) {
+			fieldLog = `Number of students in ${field}: ${fieldCount[field]}.`
+			fieldLog = fieldLog + listStudent(field, dataTable);
+			console.log(fieldLog);
+		}
+	} catch (err) {
+		throw new Error('Cannot load the database')
+	}
+
 }
 
 module.exports = countStudents;
