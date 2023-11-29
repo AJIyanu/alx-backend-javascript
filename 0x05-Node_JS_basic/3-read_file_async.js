@@ -44,10 +44,14 @@ function listStudent(fieldName, rows) {
 }
 
 function countStudents(path) {
-    return fs.readFile(path, 'utf8', (err, data) => {
-    if (err) {
-        throw new Error('Cannot load the database');
+    return new Promise((resolve, reject) => {
+        fs.readFile(path, 'utf8', (err, data) => {
+    if ( err ) {
+        reject (new Error('Cannot load the database'));
     }
+    if (data === undefined) {
+        reject( new Error('Cannot load the database'));
+    } else {
     const dataTable = splitData(data);
     dataTable.splice(0, 1);
     console.log(`Number of students: ${dataTable.length}`);
@@ -59,6 +63,9 @@ function countStudents(path) {
       fieldLog += listStudent(field, dataTable);
       console.log(fieldLog);
     }
+}
+    resolve();
+});
 });
 }
 
