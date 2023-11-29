@@ -19,8 +19,8 @@ function countStudentField(rows) {
   const studentField = {};
 
   for (const row of rows) {
-    if (studentField.hasOwnProperty(row[3])) {
-      studentField[row[3]] = studentField[row[3]] + 1;
+    if ( Object.hasOwnProperty.call(studentField, row[3]) ) {
+      studentField[row[3]] += 1;
     } else {
       studentField[row[3]] = 1;
     }
@@ -32,7 +32,7 @@ function listStudent(fieldName, rows) {
   let studList = ' List:';
   let check = false;
   for (const name of rows) {
-    if (fieldName == name[3]) {
+    if (fieldName === name[3]) {
       if (check === true) {
         studList = `${studList},`;
       }
@@ -52,8 +52,8 @@ function countStudents(path) {
 
     const fieldCount = countStudentField(dataTable);
     let fieldLog = '';
-    for (const field in fieldCount) {
-      fieldLog = `Number of students in ${field}: ${fieldCount[field]}.`;
+    for (const [field, count] of Object.entries(fieldCount)) {
+      fieldLog = `Number of students in ${field}: ${count}.`;
       fieldLog += listStudent(field, dataTable);
       console.log(fieldLog);
     }
