@@ -8,7 +8,6 @@ function splitData(allData) {
   for (const row of rows) {
     if (row !== '' && row !== '\r') {
       const fields = row.split(/[",", "\r"]/);
-      fields.pop();
       dataArray.push(fields);
     }
   }
@@ -44,29 +43,29 @@ function listStudent(fieldName, rows) {
 }
 
 function countStudents(path) {
-    return new Promise((resolve, reject) => {
-        fs.readFile(path, 'utf8', (err, data) => {
-    if ( err ) {
-        reject (new Error('Cannot load the database'));
-    }
-    if (data === undefined) {
-        reject( new Error('Cannot load the database'));
-    } else {
-    const dataTable = splitData(data);
-    dataTable.splice(0, 1);
-    console.log(`Number of students: ${dataTable.length}`);
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, 'utf8', (err, data) => {
+      if (err) {
+        reject(new Error('Cannot load the database'));
+      }
+      if (data === undefined) {
+        reject(new Error('Cannot load the database'));
+      } else {
+        const dataTable = splitData(data);
+        dataTable.splice(0, 1);
+        console.log(`Number of students: ${dataTable.length}`);
 
-    const fieldCount = countStudentField(dataTable);
-    let fieldLog = '';
-    for (const [field, count] of Object.entries(fieldCount)) {
-      fieldLog = `Number of students in ${field}: ${count}.`;
-      fieldLog += listStudent(field, dataTable);
-      console.log(fieldLog);
-    }
-}
-    resolve();
-});
-});
+        const fieldCount = countStudentField(dataTable);
+        let fieldLog = '';
+        for (const [field, count] of Object.entries(fieldCount)) {
+          fieldLog = `Number of students in ${field}: ${count}.`;
+          fieldLog += listStudent(field, dataTable);
+          console.log(fieldLog);
+        }
+      }
+      resolve();
+    });
+  });
 }
 
 module.exports = countStudents;
