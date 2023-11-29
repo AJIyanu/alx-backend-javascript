@@ -19,7 +19,7 @@ function countStudentField(rows) {
   const studentField = {};
 
   for (const row of rows) {
-    if ( Object.hasOwnProperty.call(studentField, row[3]) ) {
+    if (Object.hasOwnProperty.call(studentField, row[3])) {
       studentField[row[3]] += 1;
     } else {
       studentField[row[3]] = 1;
