@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { parse } = require('csv-parse');
-const { count } = require('console');
+// const { parse } = require('csv-parse');
+// const { count } = require('console');
 
 
 function countStudents(path) {
