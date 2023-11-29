@@ -8,7 +8,6 @@ function splitData(allData) {
   for (const row of rows) {
     if (row !== '' && row !== '\r') {
       const fields = row.split(/[",", "\r"]/);
-      fields.pop();
       dataArray.push(fields);
     }
   }
