@@ -10,7 +10,7 @@ const app = http.createServer( async (req, res) => {
         res.end('Hello Holberton School!');
       } else if (req.url === '/students') {
         let studList = 'This is the list of our students\n';
-        await countStudents(process.argv[2])
+        await countStudent(process.argv[2])
           .then((msg) => {
             studList += msg;
             res.end(studList);
@@ -22,8 +22,8 @@ const app = http.createServer( async (req, res) => {
       }
     });
 
-    app.listen(port, hostname, () => {
-      console.log(`Server running at http://${hostname}:${port}`);
+    app.listen(port, host, () => {
+      console.log(`Server running at http://${host}:${port}`);
     });
 
     module.exports = app;
